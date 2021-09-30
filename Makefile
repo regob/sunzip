@@ -18,10 +18,10 @@ blast.o: $(CONTRIBDIR)blast/blast.c
 	$(CC) -c -o $@ $(CONTRIBDIR)blast/blast.c
 
 infback9.o: $(CONTRIBDIR)infback9/infback9.c
-	$(CC) -c -o $@ $(CONTRIBDIR)infback9/infback9.c
+	$(CC) -Izlib/ -c -o $@ $(CONTRIBDIR)infback9/infback9.c
 
 inftree9.o: $(CONTRIBDIR)infback9/inftree9.c
-	$(CC) -c -o $@ $(CONTRIBDIR)infback9/inftree9.c
+	$(CC) -Izlib/ -c -o $@ $(CONTRIBDIR)infback9/inftree9.c
 
 zutil.o: zlib/zutil.c
 	$(CC) -c -o $@ zlib/zutil.c
@@ -29,6 +29,6 @@ zutil.o: zlib/zutil.c
 sunzip.o: sunzip.c
 	$(CC) -Izlib/contrib/blast/ -Izlib/contrib/infback9 -Ibzip2/ -c -o $@ sunzip.c
 
+distclean: clean
 clean:
-	rm *.o
-	rm sunzip
+	rm -f $(OBJS) sunzip
