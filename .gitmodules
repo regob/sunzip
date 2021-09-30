@@ -1,0 +1,6 @@
+[submodule "zlib"]
+	path = zlib
+	url = git@github.com:madler/zlib.git
+[submodule "bzip2"]
+	path = bzip2
+	url = git@github.com:libarchive/bzip2.git
